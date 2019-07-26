@@ -116,7 +116,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                             }
                         });
                     }else{
-                        NewsApp.getInstance().hashMapFavoriteNews.remove(newsModel);
+                        NewsApp.getInstance().hashMapFavoriteNews.remove(newsModel.getTitle());
                         Single.fromCallable(new Callable<NewsModel>() {
                             @Override
                             public NewsModel call() throws Exception {
