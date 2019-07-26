@@ -26,6 +26,7 @@ import newsapi.org.android.adapter.holder.NewsViewHolder;
 import newsapi.org.android.database.News;
 import newsapi.org.android.model.NewsModel;
 import newsapi.org.android.utils.ActivityHelper;
+import newsapi.org.android.utils.Utils;
 
 public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
@@ -80,7 +81,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
                     .into(newsViewHolder.binding.imageView);
             newsViewHolder.binding.tvTitle.setText(newsModel.getTitle());
             newsViewHolder.binding.tvDescription.setText(newsModel.getDescription());
-            newsViewHolder.binding.tvDate.setText(newsModel.getPublishedAt());
+            newsViewHolder.binding.tvDate.setText(Utils.getSimpleDate(newsModel.getPublishedAt()));
             if(newsModel.isFavorite()){
                 newsViewHolder.binding.icFavorite.setImageResource(R.drawable.ic_favorite_red);
             }else{

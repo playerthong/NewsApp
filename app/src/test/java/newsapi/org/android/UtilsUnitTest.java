@@ -1,6 +1,10 @@
 package newsapi.org.android;
 
+import android.util.Log;
+
 import org.junit.Test;
+
+import newsapi.org.android.utils.Utils;
 
 import static org.junit.Assert.*;
 
@@ -9,9 +13,12 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class ExampleUnitTest {
+public class UtilsUnitTest {
+
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void testConvertToSimpleDate() {
+        String simpleDate=Utils.getSimpleDate("2019-07-25T02:32:07Z");
+        assertEquals("Thu, 25 Jul 2019", simpleDate);
     }
+
 }
